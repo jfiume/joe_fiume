@@ -6,9 +6,9 @@ export const receiveRobot = robot => ({
 });
 
 export const fetchRobot = (text) => dispatch => {
+  const url = text.text;
+  const robot = {"robot":`https://robohash.org/${url}.png`}
   return (
-    JSON.parse('{ "robot":`https://robohash.org/${text}.png`}').then(robot => (
-      dispatch(receiveRobot(robot))
-    ))
+    dispatch(receiveRobot(robot))
   );
 };
