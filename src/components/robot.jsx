@@ -24,8 +24,8 @@ class Robot extends Component {
     this.props.fetchRobot(text);
     // set a flag for when we get a new robot
     this.setState({'robot': true})
-    // delay for the animation to run, then set robot to false
-    setTimeout(() => this.setState({'robot': false}), 10000);
+    // delay for the animation to run, then set robot to false and remove the previous text
+    setTimeout(() => this.setState({'text': "", 'robot': false}), 10000);
   }
 
   render() {
